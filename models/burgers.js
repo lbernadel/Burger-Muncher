@@ -1,7 +1,12 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const burgers = sequelize.define('burgers', {
-    id: DataTypes.INTEGER,
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true,
+    },
     burger_name: DataTypes.STRING,
     isEaten: DataTypes.BOOLEAN
   }, {});

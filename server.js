@@ -1,6 +1,7 @@
 const express = require('express'),
     exphbs = require('express-handlebars'),
-    app = express();
+    app = express(),
+    morgan = require("morgan");
 
 //set up for sequelize
 const db = require("./models/index");
@@ -14,8 +15,13 @@ app.set("view engine", "handlebars")
 //Middleware
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+app.use(morgan("dev"))
+
+//static assets
 app.use(express.static("public"))
-app.use(express.static("views"))
+
+//Routes
+app.use(require("./controllers/burgersController"))
 
 //Synchronize schema and set server to listen
 db.sequelize.sync({ force: true})
