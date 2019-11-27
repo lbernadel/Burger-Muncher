@@ -1,0 +1,30 @@
+{
+  "name": "burger-muncher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lbernadel/Burger-Muncher.git"
+  },
+  "keywords": [],
+  "author": "lbernadel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lbernadel/Burger-Muncher/issues"
+  },
+  "homepage": "https://github.com/lbernadel/Burger-Muncher#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql2": "^2.0.1",
+    "sequelize": "^5.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  }
+}
