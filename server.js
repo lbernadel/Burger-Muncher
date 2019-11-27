@@ -2,6 +2,9 @@ const express = require('express'),
     exphbs = require('express-handlebars'),
     app = express();
 
+//set up for sequelize
+const db = require("./models/index");
+
 const PORT = process.env.PORT || 8080;
 
 
@@ -20,9 +23,12 @@ app.get("/", (req, res) =>{
     res.render("index")
 })
 
-//Tells server to listen
-app.listen(PORT, () => {
-    console.log(`---> App is listening on http://localhost:${PORT}`)
-});
+//Synchronize schema and set server to listen
+db.sequelize.sync({ force: true})
+    .then(() => {
+        app.listen(PORT, () => {
+            console.log(`---> App is listening on http://localhost:${PORT}`)
+        });
+    })
 
 
