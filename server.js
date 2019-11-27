@@ -7,7 +7,6 @@ const db = require("./models/index");
 
 const PORT = process.env.PORT || 8080;
 
-
 //View engine
 app.engine("handlebars", exphbs({ defaultLayout: "main"}))
 app.set("view engine", "handlebars")
@@ -17,11 +16,6 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(express.static("public"))
 app.use(express.static("views"))
-
-//Routes
-app.get("/", (req, res) =>{
-    res.render("index")
-})
 
 //Synchronize schema and set server to listen
 db.sequelize.sync({ force: true})
