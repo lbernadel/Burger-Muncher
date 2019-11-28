@@ -1,11 +1,23 @@
-<img src="/assets/images/burger.png" alt="cartoon burger image">
-<h1>Welcome to Burger Muncher!</h1>
+<div class="text-center">
+    <img src="/assets/images/burger.png" alt="cartoon burger image" class="my-5 img-fluid">
+</div>
+<div class="container">
+    <div class="row my-2 py-2">
+        <div class="col-sm-12 col-md-10 offset-md-1">
+            <h1 class="text-center">Welcome to Burger Muncher!</h1>
 
-<p>Once you type in the kind of burger you want, click "Submit".</p>
+            <p class="text-center">Once you type in the kind of burger you want, click "Submit".</p>
 
-<form action="/" method="post" placeholder>
-    <p>
-        <textarea name="burger_name" cols="30" rows="5"></textarea>
-    </p>
-    <button type="submit">Submit</button>
-</form>
+            <form action="/" method="post" id="submitBurger">
+                <div class="form-group">
+                    <textarea name="burger_name" id="burgerName" rows="5" class="form-control" placeholder="What kind of burger do you want to eat?"></textarea>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-success mb-4">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/public/assets/js/index.js"></script>
