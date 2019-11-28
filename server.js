@@ -24,11 +24,11 @@ app.use(express.static("public"))
 app.use(require("./controllers/burgersController"))
 
 //Synchronize schema and set server to listen
-db.sequelize.sync({ force: true})
+db.sequelize.sync({ force: process.env.NODE_ENV !== "production" })
     .then(() => {
         app.listen(PORT, () => {
-            console.log(`---> App is listening on http://localhost:${PORT}`)
+            console.log(`---> Server is listening on http://localhost:${PORT}/`)
         });
-    })
+    });
 
 
