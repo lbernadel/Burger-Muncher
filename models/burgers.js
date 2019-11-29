@@ -7,8 +7,13 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
     },
-    burger_name: DataTypes.STRING,
-    isEaten: DataTypes.BOOLEAN
+    burger_name: {
+      type: DataTypes.STRING,
+      allowNull: false},
+    isEaten: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    }
   }, {});
 
   burgers.associate = function(models) {
