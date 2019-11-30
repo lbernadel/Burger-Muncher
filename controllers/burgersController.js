@@ -26,10 +26,10 @@ app.post("/api/burgers", (req, res) => {
 });
 
 app.put("/api/burgers/:id", (req, res) => {
-    const {id} = req.params.id,
-        {isEaten} = req.body.isEaten;
+    const {id} = req.params,
+        {isEaten} = req.body;
     
-    db.burgers.update({ isEaten: {isEaten} }, { where: {id: {id}} })
+    db.burgers.update({ isEaten: isEaten }, { where: {id: id} })
         .then(updateBurgers => {
             res.json(updateBurgers)
         })

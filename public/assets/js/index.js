@@ -11,20 +11,19 @@ $("#submitBurger").on("submit", event => {
     });
 });
 
-$(".eat").click(() => {
+$(".eat").click((event) => {
 
-    let id = $(this).parent().attr('data-id')
+    let id = $(event.target).parent().attr('data-id')
 
     $.ajax ({
         url: `/api/burgers/${id}`,
         method: "PUT",
         data: {
-            isEaten: true
+            isEaten: 1
         }
-    }).then((data) => {
-        console.log(data)
+    }).then(() => {
+        location.reload()
     }).catch(err => {
         console.log(err)
-        location.reload()
     });
 });
