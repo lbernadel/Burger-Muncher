@@ -17,3 +17,7 @@ html, body {
     color: green;
     font-weight: bold;
 }
+
+.list-group-item {
+    background-color: none !important;
+}
