@@ -10,6 +10,7 @@ $("#submitBurger").on("submit", event => {
         method: "POST",
         data: newBurger
     }).then( res => {
-        console.log(res)
+        location.reload()    
     })
-})
+});
+

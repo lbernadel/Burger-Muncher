@@ -1,0 +1,19 @@
+html, body {
+    background-color: lightcyan;
+}
+
+.welcome {
+    font-family: 'Caveat', cursive;
+    font-weight: bold;
+    color: orangered;
+}
+
+.colTitle {
+    font-family: 'Permanent Marker', cursive;
+    color: mediumblue;
+}
+
+.info {
+    color: green;
+    font-weight: bold;
+}

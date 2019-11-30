@@ -1,6 +1,7 @@
 const express = require('express'),
     exphbs = require('express-handlebars'),
     app = express(),
+    path = require('path'),
     morgan = require("morgan");
 
 //set up for sequelize
@@ -18,7 +19,7 @@ app.use(express.json())
 app.use(morgan("dev"))
 
 //static assets
-app.use(express.static("public"))
+app.use(express.static(path.join(__dirname, '/public')))
 
 //Routes
 app.use(require("./controllers/burgersController"))
