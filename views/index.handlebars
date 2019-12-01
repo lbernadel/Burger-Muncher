@@ -14,12 +14,13 @@
             <h3 class="ml-2 pl-3 colTitle">Burgers to Eat</h3>
             <ul class="list-group">
                 {{#each burgers}}
+                {{#unless isEaten}}
                 <li data-id="{{id}}" class="list-group-item my-0 py-2 d-flex justify-content-between">
                     <p class="p-0 m-0 flex-grow-1">{{burger_name}}</p>
                     <button class="btn btn-primary btn-sm eat">Eat Me</button>
-                </li>
+                </li>{{/unless}}
                 {{else}}
-                <li>No burgers have been created. Add one below!</li>
+                <li>No burgers are cooked yet! Add one below.</li>
                 {{/each}}
             </ul>
         </div>
@@ -27,12 +28,10 @@
             <h3 class="ml-4 pl-4 colTitle">Burgers Eaten</h3>
             <ul class="list-group ml-4">
                 {{#each burgers}}
-                {{#if isEaten includeZero=false}}
+                {{#if isEaten}}
                 <li data-id="{{id}}" class="list-group-item my-0 py-2">
                     <p class="p-0 m-0">{{burger_name}}</p>
                 </li>{{/if}}
-                {{else}}
-                <li>Nothing has been eaten yet.</li>
                 {{/each}}
             </ul>
         </div>

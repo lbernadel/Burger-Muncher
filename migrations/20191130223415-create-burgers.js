@@ -9,16 +9,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       burger_name: {
+        allowNull:false,
         type: Sequelize.STRING,
-        allowNull: false
       },
       isEaten: {
         type: Sequelize.BOOLEAN,
-        defaultValue: false
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,

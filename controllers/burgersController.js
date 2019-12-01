@@ -6,7 +6,9 @@ const express = require('express'),
 app.get("/", (req, res) =>{
     db.burgers.findAll()
         .then(burger => {
-            res.render("index", {burgers: burger})
+            const nothing = "Nothing yet!";
+
+            res.render("index", { burgers: burger || nothing})
         })
         .catch(err => {
             res.status(500).json(err)

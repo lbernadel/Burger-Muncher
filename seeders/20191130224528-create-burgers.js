@@ -6,6 +6,11 @@ module.exports = {
       burger_name: 'Bacon',
       createdAt: Sequelize.literal('NOW()'),
       updatedAt: Sequelize.literal('NOW()')
+    },
+    {
+      burger_name: 'Black Bean',
+      createdAt: Sequelize.literal('NOW()'),
+      updatedAt: Sequelize.literal('NOW()')
     }], {});
   },
 
