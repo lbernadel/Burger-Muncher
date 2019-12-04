@@ -18,6 +18,8 @@ The main issues I encountered were:
 3. Using Handlebars to display the data in two columns and then display eaten burgers without leaving them on the uneaten side.
 4. Getting seed data to deploy in Heroku based on migrations and seeder files.
 
+**Update**: Learned how to add migrations and seeders to Heroku in class a few days later.
+
 ## Sources
 - [Sequelize Docs](https://sequelize.org/master/index.html)
 - [Handlebars: Built-in Helpers](https://handlebarsjs.com/guide/builtin-helpers.html)
